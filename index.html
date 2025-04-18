@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Park Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen font-sans">
+  <header class="bg-green-600 text-white p-4 text-center text-xl font-semibold">
+    Park Tracker
+  </header>
+
+  <main class="p-4 max-w-3xl mx-auto">
+    <!-- Page-specific content will go here -->
+    <p class="text-gray-500">🚧 Placeholder: This page is under construction.</p>
+  </main>
+  <script type="module">
+  import { db, auth } from './js/firebase-config.js';
+
+  console.log('Firebase initialized', db, auth);
+
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      console.log('Signed in anonymously:', user.uid);
+    }
+  });
+</script>
+
+</body>
+</html>
